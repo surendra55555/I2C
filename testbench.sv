@@ -18,7 +18,7 @@ Author      : surendra
 `include "Scoreboard.sv"
 import uvm_pkg::*;
 
-  import i2c_pkg::*;
+  //import i2c_pkg::*;
 
 module i2c_master_tb();
   
