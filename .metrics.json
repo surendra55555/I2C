@@ -1,0 +1,34 @@
+{
+	    "builds": {
+	        "list": [
+	                   {
+	                        "name": "I2C",
+	                        "cmd": "dsim -linebuf -work $ROOT_DIR/dsim_work -top i2c_master_tb -genimage I2C +incdir+$UVM_HOME/src $UVM_HOME/src/uvm.sv +incdir+$ROOT_DIR/ -F $ROOT_DIR/list.f ",
+	                        "wavesCmd": "dsim -linebuf +acc+rwb  -work $ROOT_DIR/dsim_work -top i2c_master_tb -genimage I2C +incdir+$UVM_HOME/src $UVM_HOME/src/uvm.sv +incdir+$ROOT_DIR/ -F $ROOT_DIR/list.f"
+	                    }
+	            ]
+	    },
+	    "regressions": [
+	                     {
+	                         "name": "I2C sanity tests",
+	                        "description": "Sanity tests for I2C",
+	                       "tests": {
+	                                "resultsDir": "/mux-flow/results",
+	                                "builds": ["I2C"],                
+	                                "list": [
+	                                    {"name": "test1",
+	                                         "iterations": 1,
+	                                         "build": "I2C",
+	                                         "cmd": "cd <resultsDir>;dsim -linebuf -work $ROOT_DIR/dsim_work +UVM_TESTNAME=test -image I2C +acc+b  -sv_lib $UVM_HOME/src/dpi/libuvm_dpi.so  ",
+	                                         "wavesCmd": "cd <resultsDir>;dsim -linebuf -work $ROOT_DIR/dsim_work +UVM_TESTNAME=test1 -image I2C +acc+b  -sv_lib $UVM_HOME/src/dpi/libuvm_dpi.so -waves waves.vcd.gz",
+	                                         "logFile": "dsim.log",
+	                                         "wavesFile": "waves.vcd.gz",
+	                                         "metricsFile": "metrics.db",
+	                                         "seed": "random",
+	                                         "isPass": [""]
+	                                    }]
+	                                 }
+	                        }
+	                     ]
+	}
+
