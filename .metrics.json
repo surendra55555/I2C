@@ -16,7 +16,8 @@
 	                                "resultsDir": "/mux-flow/results",
 	                                "builds": ["I2C"],                
 	                                "list": [
-	                                    {"name": "test1", "test2",
+	                                    {"name": "test1", 
+					      "name": "test2",
 	                                         "iterations": 1,
 	                                         "build": "I2C",
 	                                         "cmd": "cd <resultsDir>;dsim -linebuf -work $ROOT_DIR/dsim_work +UVM_TESTNAME=test -image I2C +acc+b  -sv_lib $UVM_HOME/src/dpi/libuvm_dpi.so  ",
