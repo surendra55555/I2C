@@ -16,7 +16,9 @@ Author      : surendra
 `include "SlaveRead.sv"			// Slave Read
 `include "Monitor.sv"
 `include "Scoreboard.sv"
+import uvm_pkg::*;
 
+  import i2c_pkg::*;
 
 module i2c_master_tb();
   
